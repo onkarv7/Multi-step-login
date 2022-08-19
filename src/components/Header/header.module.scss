@@ -1,0 +1,21 @@
+.Header{
+    display: flex;
+    flex-direction: row;
+    width:auto;
+    align-items: center;
+    padding: 3rem;
+    margin-bottom: 1rem;
+
+    &__image{
+        height: 4rem;
+        width: 4rem;
+        filter: invert(25%) sepia(45%) saturate(3530%) hue-rotate(236deg) brightness(94%) contrast(86%)
+    }
+
+    &__text{
+        font-size: 2rem;
+        font-weight: 600;
+        color: var(--color-primary-text-dark);
+    }
+    
+}

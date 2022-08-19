@@ -1,0 +1,108 @@
+.stepper {
+  width: 27rem;
+  margin-bottom: 2rem;
+  .steps {
+    display: flex;
+    width: 100%;
+    margin: 0;
+    padding: 0 0 4rem 0;
+    list-style: none;
+  }
+
+  .step {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    flex: 1;
+    position: relative;
+    pointer-events: none;
+
+    &__active,
+    &__complete {
+      cursor: pointer;
+      pointer-events: all;
+    }
+
+    &:not(:last-child) {
+      &:before,
+      &:after {
+        display: block;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        height: 1px;
+        content: "";
+        transform: translateY(-50%);
+        will-change: width;
+        z-index: -1;
+      }
+    }
+
+    &:before {
+      width: 100%;
+      background-color: var(--color-progress-background);
+    }
+
+    &:after {
+      width: 0;
+      background-color: var(--color-primary-buttons);
+    }
+
+    &__complete {
+      &:after {
+        width: 100% !important;
+        opacity: 1;
+        transition: width 0.6s ease-in-out, opacity 0.6s ease-in-out;
+      }
+    }
+
+    &__active {
+      &:after {
+        width: 50% !important;
+        opacity: 1;
+        transition: width 0.6s ease-in-out, opacity 0.6s ease-in-out;
+      }
+    }
+  }
+
+  .step__icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    width: 2.5rem;
+    height: 2.5rem;
+    background-color: var(--color-primary-text-light);
+    border: 1px solid var(--color-progress-background);
+    border-radius: 50%;
+    color: var(--color-primary-text-dark);
+    font-size: 1rem;
+    font-weight: 400;
+  }
+
+  .step__complete.step__active {
+    .step__icon {
+      color: var(--color-primary-buttons);
+      transition: background-color 0.3s ease-in-out,
+        border-color 0.3s ease-in-out, color 0.3s ease-in-out;
+    }
+  }
+
+  .step__incomplete.step__active {
+    .step__icon {
+      border-color: var(--color-primary-buttons);
+      transition-delay: 0.5s;
+      background-color: var(--color-primary-buttons);
+      color: var(--color-primary-text-light);
+    }
+  }
+
+  .step__complete {
+    .step__icon {
+      background-color: var(--color-primary-buttons);
+      border-color: var(--color-primary-buttons);
+      color: var(--color-primary-text-light);
+    }
+  }
+}

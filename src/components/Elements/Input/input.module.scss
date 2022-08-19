@@ -1,0 +1,66 @@
+.FormInput{
+    display:flex;
+    flex-direction: column;
+    width:100%;
+
+    &__label{
+        font-size: 1rem;
+        font-weight: 700;
+        color: var(--color-primary-text-dark);
+        margin-bottom: .25rem;
+    }
+    &__input{
+        height: 2.5rem;
+        font-size: 1rem;
+        padding: 0.5rem;
+        font-weight: 400;
+        border: 0.1rem solid var(--color-progress-background);
+        border-radius: 0.2rem;
+        margin-bottom: 1rem;
+        outline:none;
+
+        &:focus{
+            border: 0.1rem solid var(--color-primary-text-dark);
+        }
+    }
+}
+.workspaceURL{
+    display:flex;
+    flex-direction: row;
+    width:100%;
+
+    &__default{
+        border: 0.1rem solid var(--color-progress-background);
+        color: var(--color-primary-text-medium);
+        height: 2.5rem;
+        width:30%;
+        border-radius: 0.2rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 0.5rem;
+        font-weight: 500;
+        background-color: var(--color-primary-text-light);
+        border-right: none;
+        font-size: .8rem;
+    }
+    &__input{
+        width:70%;
+        height: 2.5rem;
+        font-size: 1rem;
+        padding: 0.5rem;
+        font-weight: 400;
+        border: 0.1rem solid var(--color-progress-background);
+        border-radius: 0.2rem;
+        margin-bottom: 1rem;
+        outline:none;
+
+        &:focus{
+            border: 0.1rem solid var(--color-primary-text-dark);
+        }
+    }
+}
+.tabTwoLabel{
+    display: flex;
+    flex-direction: row;
+}
